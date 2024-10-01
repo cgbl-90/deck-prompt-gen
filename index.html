@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generador de Prompts <br /> para presentaciones</h1>
+        <form id="prompt-form">
+
+            <div class="option-group" id="style-options">
+                <h2>Estilo</h2>
+                <!-- Aquí se inyectarán las opciones dinámicamente -->
+            </div>
+
+            <div class="option-group" id="tone-options">
+                <h2>Tono de voz</h2>
+                <!-- Aquí se inyectarán las opciones dinámicamente -->
+            </div>
+
+            <div class="option-group" id="purpose-options">
+                <h2>Propósito</h2>
+                <!-- Aquí se inyectarán las opciones dinámicamente -->
+            </div>
+
+            <div class="option-group" id="audience-options">
+                <h2>Audiencia | Público</h2>
+                <!-- Aquí se inyectarán las opciones dinámicamente -->
+            </div>
+
+            <div class="option-group" id="length-options">
+                <h2>Duración</h2>
+                <!-- Aquí se inyectarán las opciones dinámicamente -->
+            </div>
+
+            <div class="option-group" id="slide-count-options">
+                <h2>Número de diapositivas</h2>
+                <input type="range" id="slide-count" name="slideCount" min="1" max="12" value="10" />
+                <span id="slide-count-value">10</span>
+            </div>
+
+            <div class="option-group" id="slide-type-options">
+                <h2>Tipos de diapositivas</h2>
+                <!-- Aquí se inyectarán las opciones dinámicamente -->
+            </div>
+
+            <div class="option-group">
+                <h2>Idea base</h2>
+                <textarea id="idea-input" rows="3" placeholder="Escribe tu idea aquí"></textarea>
+            </div>
+
+            <button type="button" id="generate-prompt">Generar</button>
+        </form>
+
+        <div id="prompt-output">
+            <h2>Prompt</h2>
+            <textarea id="generated-prompt" rows="6" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="scripts/generate.js"></script>
+</body>
+
+</html>

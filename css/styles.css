@@ -1,0 +1,56 @@
+body {
+    font-family: "Trebuchet MS", "Arial", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    /* For Chrome, Safari */
+    -moz-osx-font-smoothing: grayscale;
+    /* For Firefox on macOS */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+.option-group {
+    margin-bottom: 20px;
+}
+
+label {
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#prompt-output {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #dadada;
+    resize: none;
+}
