@@ -9,7 +9,7 @@ const options = {
     "Creativo",
     "Tecnológico",
   ],
-  tone: ["Formal", "Conversacional", "Persuasivo", "Inspirador", "Pragmático"],
+  tone: ["Formal", "Conversacional", "Persuasivo"],
   purpose: [
     "Educar",
     "Motivar",
