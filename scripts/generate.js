@@ -210,8 +210,7 @@ function generatePrompt() {
     purposes.length > 0 ? purposes.join(", ") : "sin propósito específico";
   const slideTypeText = slideTypes.join(", ");
 
-  const prompt = `Crear una presentación con estilo ${styleText}, tono de voz ${tone}, con el propósito de ${purposeText}, para una audiencia de ${audience}. 
-    La presentación tendrá una duración ${length}, con ${slideCount} diapositivas, e incluirá los siguientes tipos de diapositivas: ${slideTypeText}, basada en esta idea: ${idea}.`;
+  const prompt = `Crear una presentación en español (castellano) con estilo ${styleText}, tono de voz ${tone}, con el propósito de ${purposeText}, para una audiencia de ${audience}. La presentación tendrá una duración ${length}, con ${slideCount} diapositivas, e incluirá los siguientes tipos de diapositivas: ${slideTypeText}, basada en esta idea: ${idea}.`;
 
   // Mostrar el prompt generado en el textarea
   document.getElementById("generated-prompt").textContent = prompt;
