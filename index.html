@@ -4,53 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompt Generator</title>
+    <title>PrezPrompts</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Generador de Prompts <br /> para presentaciones</h1>
+        <h2>Generador de Prompts para presentaciones</h2>
         <form id="prompt-form">
 
             <div class="option-group" id="style-options">
-                <h2>Estilo</h2>
+                <h4>Estilo</h4>
                 <!-- Aquí se inyectarán las opciones dinámicamente -->
             </div>
 
             <div class="option-group" id="tone-options">
-                <h2>Tono de voz</h2>
+                <h4>Tono de voz</h4>
                 <!-- Aquí se inyectarán las opciones dinámicamente -->
             </div>
 
             <div class="option-group" id="purpose-options">
-                <h2>Propósito</h2>
+                <h4>Propósito</h4>
                 <!-- Aquí se inyectarán las opciones dinámicamente -->
             </div>
 
             <div class="option-group" id="audience-options">
-                <h2>Audiencia | Público</h2>
+                <h4>Audiencia | Público</h4>
                 <!-- Aquí se inyectarán las opciones dinámicamente -->
             </div>
 
             <div class="option-group" id="length-options">
-                <h2>Duración</h2>
+                <h4>Duración</h4>
                 <!-- Aquí se inyectarán las opciones dinámicamente -->
             </div>
 
             <div class="option-group" id="slide-count-options">
-                <h2>Número de diapositivas</h2>
-                <input type="range" id="slide-count" name="slideCount" min="1" max="12" value="10" />
+                <h4>Número de diapositivas</h4>
+                <input type="range" id="slide-count" name="slideCount" min="5" max="12" value="10" />
                 <span id="slide-count-value">10</span>
             </div>
 
             <div class="option-group" id="slide-type-options">
-                <h2>Tipos de diapositivas</h2>
+                <h4>Tipos de diapositivas</h4>
                 <!-- Aquí se inyectarán las opciones dinámicamente -->
             </div>
 
             <div class="option-group">
-                <h2>Idea base</h2>
+                <h4>Idea base</h4>
                 <textarea id="idea-input" rows="3" placeholder="Escribe tu idea aquí"></textarea>
             </div>
 
@@ -58,8 +58,9 @@
         </form>
 
         <div id="prompt-output">
-            <h2>Prompt</h2>
+            <h4>Prompt</h4>
             <textarea id="generated-prompt" rows="6" readonly></textarea>
+            <button id="copy-prompt">Copiar Prompt</button>
         </div>
     </div>
 

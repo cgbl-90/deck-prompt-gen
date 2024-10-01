@@ -66,7 +66,7 @@ function loadOptions() {
   loadOptionGroup("tone-options", "tone");
   loadOptionGroup("purpose-options", "purpose");
   loadOptionGroup("audience-options", "audience");
-  loadOptionGroup("length-options", "length"); // Nueva categoría de duración
+  loadLengthOptions("length-options"); // Cambiado para usar la nueva función
   loadSlideTypeOptions("slide-type-options");
 }
 
@@ -76,8 +76,31 @@ function loadOptionGroup(groupId, category) {
   options[category].forEach((option) => {
     const label = document.createElement("label");
     const input = document.createElement("input");
-    input.type = "checkbox"; // Cambiado a checkbox
-    input.name = category; // Mantener el mismo nombre para agrupar
+
+    // Cambiado a checkbox para estilo, tono y propósito
+    if (category === "style" || category === "tone" || category === "purpose") {
+      input.type = "checkbox";
+      input.name = category;
+    } else {
+      input.type = "radio"; // Cambiado a radio para length
+      input.name = category; // Mantener el mismo nombre para agrupar
+    }
+
+    input.value = option;
+    label.appendChild(input);
+    label.append(option);
+    groupElement.appendChild(label);
+  });
+}
+
+// Función específica para cargar opciones de longitud
+function loadLengthOptions(groupId) {
+  const groupElement = document.getElementById(groupId);
+  options.length.forEach((option) => {
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+    input.type = "radio"; // Mantener como radio para permitir una sola selección
+    input.name = "length"; // Nombre del grupo
     input.value = option;
     label.appendChild(input);
     label.append(option);
@@ -193,6 +216,29 @@ function generatePrompt() {
   // Mostrar el prompt generado en el textarea
   document.getElementById("generated-prompt").textContent = prompt;
 }
+
+// Función para copiar el contenido del prompt al portapapeles
+function copyPrompt() {
+  const promptText = document.getElementById("generated-prompt").textContent;
+
+  // Verificar que haya texto para copiar
+  if (promptText.trim() === "") {
+    alert("No hay texto para copiar.");
+    return;
+  }
+
+  navigator.clipboard
+    .writeText(promptText)
+    .then(() => {
+      alert("Prompt copiado al portapapeles!");
+    })
+    .catch((err) => {
+      console.error("Error al copiar: ", err);
+    });
+}
+
+// Asociar el botón de copia con la función de copiar
+document.getElementById("copy-prompt").addEventListener("click", copyPrompt);
 
 // Asociar el botón con la función de generación de prompt
 document
